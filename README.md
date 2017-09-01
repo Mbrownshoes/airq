@@ -37,7 +37,9 @@ http://www.env.gov.bc.ca/epd/bcairquality/aqo/xml/E208096_Current_Month.xml
 and NOT loading the 90 day file. To match this I'm going to parse the file to 30 days and load directly.
 
 
-
+Line Graph
+http://blockbuilder.org/curran/bbff827df486e4c16488fc8bb9653917
+https://bl.ocks.org/aholachek/9e2bebdd347bf9c62a62b36779456a45
 
 
 
