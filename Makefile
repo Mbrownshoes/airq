@@ -28,6 +28,15 @@ bc_no_proj.json:build/airzones.geojson
 	geo2topo build/airzones.geojson  > bc_no_proj.json
 
 
+# build/ne_110m_ocean.zip:
+# 	mkdir -p build
+# 	curl -o $@ --raw 'http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/110m/physical/ne_110m_ocean.zip'
+shp2json build/ne_110m_ocean.shp -o ocean.json
+
+oceanTopo.json:ocean.json 
+	geo2topo ocean.json  > oceanTopo.json
+
+
 # airzones.json: build/az.json
 # 	node_modules/.bin/topojson \
 # 		--width 960 \
