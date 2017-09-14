@@ -33,6 +33,20 @@ bc_no_proj.json:build/airzones.geojson
 # 	curl -o $@ --raw 'http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/110m/physical/ne_110m_ocean.zip'
 shp2json build/ne_110m_ocean.shp -o ocean.json
 
+
+pacific.json: build/ocean.json
+	node_modules/.bin/topojson \
+		-o $@ \
+		--projection='width = 960, height = 600, d3.geo.albers() \
+			.rotate([126, -10]) \
+		    .center([7,44]) \
+		    .parallels([50, 58]) \
+		    .scale(1970) \
+		    .translate([width / 2, height / 2])' \
+	    --simplify=0.05 \
+		-- pacific=$<
+
+
 oceanTopo.json:ocean.json 
 	geo2topo ocean.json  > oceanTopo.json
 

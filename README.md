@@ -41,6 +41,7 @@ Line Graph
 http://blockbuilder.org/curran/bbff827df486e4c16488fc8bb9653917
 https://bl.ocks.org/aholachek/9e2bebdd347bf9c62a62b36779456a45
 
+Add choloropleth with colours relative to a scale
 
 
 

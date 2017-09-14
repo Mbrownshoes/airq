@@ -42,23 +42,12 @@
         cursor: pointer;
     }
     
- /*   #provinces .active {
-        fill: orange;
-        fill-opacity: 0.6;
-    }
-    */
+
     #prov-borders {
         stroke: #fff;
         stroke-linejoin: round;
     }
     
-/*    .g-summary {
-        font-size: 14px;
-        line-height: 1.35em;
-        position: absolute;
-        width: 340px;
-        color: #333;
-    }*/
     
     .aboriginal {
         fill: #006837;
@@ -104,9 +93,6 @@
       shape-rendering: crispEdges;
     }
 
- /*   .x.axis path {
-      display: none;
-    }*/
 
     .line {
         fill: none;
@@ -133,19 +119,6 @@
 
 
 
-    #grades{
-        left:850px;
-        top:320px;
-
-    }
-
-
-    .schoolname {
-        left:970px;
-        top:390px;
-
-    }
-
     #distid {
     padding-left:600px;
     margin-bottom: -75px;
@@ -160,6 +133,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.19/topojson.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="http://d3js.org/queue.v1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.24.0/d3-legend.min.js"></script>
 
 <!-- <h1>BC Schools Class Size</h1> -->
 
@@ -264,7 +238,6 @@ svg
     .call(zoom)
     .call(zoom.transform, initialTransform);
 
-d3.select("#grades").style("visibility", "hidden")
 d3.select("#distid").style("visibility", "hidden")
 d3.select("#chart_container").style("visibility", "hidden")
 
@@ -330,7 +303,7 @@ var ocean = g.selectAll("path2") // only using to mask tiles that spill over boa
         .attr("id", "ocean");
 
         ocean.attr("d", path)
-            .style("fill", "#a6cef5");
+            .style("fill", "white");
 
 
     // g.append("g")
@@ -764,8 +737,6 @@ function makeChart(currentStation,lineData) {
 
     console.log(lineData)
 
-
-
     svg1.append("g") //x axis group
         .attr("class", "x axis")
         .attr("transform", "translate(0," + heightG + ")")
@@ -794,12 +765,6 @@ function makeChart(currentStation,lineData) {
         .datum(stnDat)
         .attr("class", "line")
         .attr("d", line);
-
-
-
-
-    d3.select("#grades").transition()
-        .delay(200).style("visibility", "visible")
 
 
 
